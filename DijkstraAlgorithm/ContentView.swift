@@ -9,9 +9,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    let dijkstra = Dijkstra()
+    
     var body: some View {
-        Text("Hello, World!")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        HStack {
+            ForEach(dijkstra.characters, id: \.self) { cs in
+                VStack {
+                    ForEach(cs, id: \.self) { c in
+                        Text(String(c))
+                    }
+                }
+            }
+        }
     }
 }
 
